@@ -42,7 +42,11 @@ def from_folders_add_record(queue, img_size, writer_path, total):
     global done
     while True:
         while True:
-            img_info = queue.get(timeout=2)
+            try:
+                img_info = queue.get(timeout=2)
+            except:
+                print(img_info)
+                print("Can not get queue data in 2s")
             with lock:
                 if img_info is None and done:
                     writer.close()
