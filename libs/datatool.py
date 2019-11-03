@@ -43,6 +43,7 @@ def from_folders_add_record(queue, img_size, writer_path, total):
     while True:
         while True:
             try:
+                img_info = None
                 img_info = queue.get(timeout=2)
             except:
                 print(img_info)
