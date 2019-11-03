@@ -19,6 +19,6 @@ if __name__ == "__main__":
     args = get_args()
     cid = ImageData(img_size=args.image_size)
     if args.mode == 'folders':
-        cid.write_tfrecord_from_folders(args.read_dir, args.save_dir)
+        cid.write_tfrecord_from_folders(args.read_dir, args.save_dir, args.thread_num)
     else:
         raise('ERROR: wrong mode (only folders and mxrec are supported)')
