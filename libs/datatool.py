@@ -48,7 +48,7 @@ def from_folders_add_record(queue, img_size, writer_path, total):
                     writer.close()
                     return 
                 else:
-                    break
+                    print("restart to get queue data")
         path, label = img_info[0], img_info[1]
         img = cv2.imread(path)
         if img_size:
