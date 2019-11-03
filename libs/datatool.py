@@ -44,11 +44,14 @@ def from_folders_add_record(queue, img_size, writer_path, total):
         while True:
             img_info = queue.get(timeout=2)
             with lock:
-                if done:
+                if img_info is None and done:
                     writer.close()
-                    return 
+                    return
+                elif img_info is None:
+                    print("restart get dataset")
+                    continue
                 else:
-                    print("restart to get queue data")
+                    break
         path, label = img_info[0], img_info[1]
         img = cv2.imread(path)
         if img_size:
