@@ -1,6 +1,8 @@
 # use
 softmax_layer: "softmax_pred"
 
+class_num: 2
+
 dataset_size: 5822653
 
 batch_size: 256
@@ -27,7 +29,7 @@ out_type: E
 
 image_size: 112
 embd_size: 512
-class_num: 2
+
 embed_num: 512
 
 
